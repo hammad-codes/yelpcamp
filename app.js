@@ -22,7 +22,6 @@ const mongoSanitize = require('express-mongo-sanitize'); //To prevent mongo inje
 //Cloudinary Stuff
 if(process.env.NODE_ENV !== 'production'){ //If we are not in production environment i.e. we are in development environment then ...
     require('dotenv').config();
-    console.log(process.env.DB_URL)
 }
 
 app.engine('ejs',ejsMate);
@@ -39,8 +38,8 @@ app.use(helmet({
 
 
 //MongoDB Connection
-// const connectionString = process.env.DB_URL ;
-const connectionString = 'mongodb://127.0.0.1:27017/yelp-camp';
+const connectionString = process.env.DB_URL ;
+// const connectionString = 'mongodb://127.0.0.1:27017/yelp-camp';
 mongoose.connect(connectionString)
 .then(()=>{
     console.log('Mongoose Connection Open');
@@ -131,6 +130,6 @@ app.use((err,req,res,next)=>{
     res.status(statusCode).render('error',{err});
 })
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(9000, () => {
+  console.log("Server is running on port 9000");
 });
