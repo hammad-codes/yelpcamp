@@ -4,8 +4,8 @@
   "description": "YelpCamp is a Node.js web application with RESTful routing project from the Udemy course - The Web Developer Bootcamp by Colt Steele",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app.js",
+    "build": "npm i"
   },
   "dependencies": {
     "@mapbox/mapbox-sdk": "^0.15.3",
